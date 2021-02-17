@@ -13,6 +13,7 @@ Globals:
         Environment:
             Variables:
                 AWS: true
+                BucketName: !Ref BucketName
 Resources:
     readImage:
         Type: AWS::Serverless::Function
@@ -22,13 +23,38 @@ Resources:
             MemorySize: 4096
             Timeout: 100
             Description: readImage
+            Policies:
+                S3CrudPolicy:
+                    BucketName: !Ref BucketName
             Events:
                 Api:
                     Type: Api
                     Properties:
                         Path: /readImage
                         Method: POST
+    uploadImage:
+        Type: AWS::Serverless::Function
+        Properties:
+            Handler: build/handlers/index.uploadImage
+            Runtime: nodejs12.x
+            MemorySize: 4096
+            Timeout: 100
+            Description: uploadImage
+            Policies:
+                S3CrudPolicy:
+                    BucketName: !Ref BucketName
+            Events:
+                Api:
+                    Type: Api
+                    Properties:
+                        Path: /uploadImage
+                        Method: POST
 Outputs:
     WebEndpoint:
         Description: 'API Gateway endpoint URL for Sam Sample'
         Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/tesseract-ocr/'
+Parameters:
+    BucketName:
+        Description: 'File buckets'
+        Type: 'String'
+        Default: 'nestjs-task'
