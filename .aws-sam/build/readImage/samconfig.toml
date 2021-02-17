@@ -1,9 +1,0 @@
-version = 0.1
-[default]
-[default.deploy]
-[default.deploy.parameters]
-stack_name = "tesseract-ocr"
-s3_bucket = "nestjs-task"
-s3_prefix = "general-helpers"
-region = "eu-central-1"
-capabilities = "CAPABILITY_IAM"
