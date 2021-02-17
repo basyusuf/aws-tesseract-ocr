@@ -17,5 +17,9 @@ __decorate([
     class_validator_1.IsDefined(),
     __metadata("design:type", String)
 ], ReadImageDTO.prototype, "image", void 0);
+__decorate([
+    class_validator_1.IsOptional(),
+    __metadata("design:type", String)
+], ReadImageDTO.prototype, "lang", void 0);
 exports.ReadImageDTO = ReadImageDTO;
 //# sourceMappingURL=ReadImage.dto.js.map

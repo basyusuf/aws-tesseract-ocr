@@ -1,1 +1,1 @@
-{"version":3,"file":"ReadImage.dto.js","sourceRoot":"","sources":["../../src/dto/ReadImage.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qDAA2C;AAC3C,MAAa,YAAY;CAGxB;AADG;IADC,2BAAS,EAAE;;2CACC;AAFjB,oCAGC"}
+{"version":3,"file":"ReadImage.dto.js","sourceRoot":"","sources":["../../src/dto/ReadImage.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qDAAuD;AACvD,MAAa,YAAY;CAMxB;AAJG;IADC,2BAAS,EAAE;;2CACC;AAGb;IADC,4BAAU,EAAE;;0CACD;AALhB,oCAMC"}

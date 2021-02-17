@@ -1,2 +1,3 @@
-# aws-tesseract-ocr
-Tesseract OCR with AWS Stack
+# Tesseract.js OCR
+
+Image processing with Tesseract.js OCR on AWS.

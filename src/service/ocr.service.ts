@@ -8,10 +8,10 @@ export const readImageService = async (data: ReadImageDTO): Promise<ServiceRespo
         cachePath: path.join('/tmp'),
         logger: m => console.log("[OCR] ",m)
     });
-
+    const processLanguage = data.lang ? data.lang : "eng"
     await worker.load();
-    await worker.loadLanguage('eng');
-    await worker.initialize('eng');
+    await worker.loadLanguage(processLanguage);
+    await worker.initialize(processLanguage);
     try {
         const { data: { text } } = await worker.recognize(data.image)
         //const tesseractData = await worker.recognize(data.image);
