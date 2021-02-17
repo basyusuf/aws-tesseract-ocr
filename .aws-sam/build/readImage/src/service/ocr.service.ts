@@ -6,7 +6,7 @@ const path = require('path');
 export const readImageService = async (data: ReadImageDTO): Promise<ServiceResponse> => {
     const worker = createWorker({
         cachePath: path.join('/tmp'),
-        logger: m => console.log("[OCR] ",m)
+        logger: m => console.log(m)
     });
 
     await worker.load();

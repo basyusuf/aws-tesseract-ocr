@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Tesseract OCR
+Transform:
+- AWS::Serverless-2016-10-31
+Globals:
+  Function:
+    Timeout: 5
+    Runtime: nodejs12.x
+    Environment:
+      Variables:
+        AWS: true
+Resources:
+  readImage:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: build/handlers/index.readImage
+      Runtime: nodejs12.x
+      MemorySize: 4096
+      Timeout: 100
+      Description: readImage
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /readImage
+            Method: POST
+      CodeUri: readImage
+Outputs:
+  WebEndpoint:
+    Description: API Gateway endpoint URL for Sam Sample
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/tesseract-ocr/
